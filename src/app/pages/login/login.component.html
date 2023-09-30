@@ -1,0 +1,35 @@
+<form #loginForm="ngForm">
+
+  <div class="inputGroup inputGroup1" style="text-align: center">
+    <label>Pro-Office</label>
+  </div>
+ 
+  <img src="https://onlineuniversity.ufg.edu.sv/img/logos/Logo_Corporativo_UFG/Logo_Corporativo.png" width="90%" height="180px" >
+  <div class="inputGroup inputGroup1">
+    <label for="email1">Username</label>
+    <input type="text"  name="email" [(ngModel)]="username" maxlength="256" required/>
+  
+    <span class="indicator"></span>
+  </div>
+  <div class="inputGroup inputGroup2">
+    <label for="password">Password</label>
+    <input type="password"  name="password" [(ngModel)]="password"  required minlength="8" maxlength="16"
+    />
+    <div style="text-align: center">
+      <a routerLink="/forgot">Forgot your password?</a>
+    </div>
+    <div style="text-align: center">
+      <a routerLink="/new-user">New User</a>
+    </div>
+  </div>
+  <div class="inputGroup inputGroup3">
+    <button id="login" type="button" (click)="login()" >Log in
+      <i class="fa fa-sign-in" aria-hidden="true"></i>
+    </button>
+
+  </div>
+
+  <mat-card *ngIf="message">{{message}}</mat-card>
+  <mat-card *ngIf="error">{{error}}</mat-card>
+
+</form>
